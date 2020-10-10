@@ -1,0 +1,32 @@
+{
+  "name": "markdown-it-react-inline-style",
+  "version": "0.0.1",
+  "description": "markdown it react inline style to react object style style",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "email": "kang95630@gmail.com",
+  "author": "ZWkang",
+  "license": "MIT",
+  "devDependencies": {
+    "markdown-it": "^9.0.0"
+  },
+  "peerDependencies": {
+    "markdown-it": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZWkang/markdown-it-react-inline-style.git"
+  },
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/ZWkang/markdown-it-react-inline-style/issues"
+  },
+  "homepage": "https://github.com/ZWkang/markdown-it-react-inline-style#readme"
+}
