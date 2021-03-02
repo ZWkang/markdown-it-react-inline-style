@@ -66,22 +66,24 @@ module.exports = function MarkdownItReactInlineStyle(md, name, options) {
 			const { attrs } = token;
 			if (!attrs) return token;
 			const ats = attrs.map((attr) => {
-				const [style, rules] = attr;
-				const cssRules = rules.split(";");
-				if (style === REPLACE_SLOT) return false;
+				if (attr) {
+					const [style, rules] = attr;
+					const cssRules = rules.split(";");
+					if (style === REPLACE_SLOT) return false;
 
-				if (style === "style") {
-					let cssObject = {};
-					cssRules.map((cssRule) => {
-						const [left, right] = cssRule.split(":");
-						const RemoveSpaceLeft = left.replace(/\s/g, "");
-						const RemoveSpaceRight = right.replace(/\s/g, "");
-						const CamelCaseLeftKey = RemoveSpaceLeft.replace(/-(\w)/g, (v) =>
-							RegExp.$1.toUpperCase()
-						);
-						cssObject[CamelCaseLeftKey] = RemoveSpaceRight;
-					});
-					return [REPLACE_SLOT, `{{${object2Stirng(cssObject)}}}`];
+					if (style === "style") {
+						let cssObject = {};
+						cssRules.map((cssRule) => {
+							const [left, right] = cssRule.split(":");
+							const RemoveSpaceLeft = left.replace(/\s/g, "");
+							const RemoveSpaceRight = right.replace(/\s/g, "");
+							const CamelCaseLeftKey = RemoveSpaceLeft.replace(/-(\w)/g, (v) =>
+								RegExp.$1.toUpperCase()
+							);
+							cssObject[CamelCaseLeftKey] = RemoveSpaceRight;
+						});
+						return [REPLACE_SLOT, `{{${object2Stirng(cssObject)}}}`];
+					}
 				}
 				return attr;
 			});
