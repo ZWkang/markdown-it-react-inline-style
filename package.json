@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-react-inline-style",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "markdown it react inline style to react object style style",
   "main": "index.js",
   "scripts": {
